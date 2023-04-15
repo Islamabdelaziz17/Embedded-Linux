@@ -50,7 +50,7 @@
 #To list all microcontrollers supported
  - ./ct-ng list-samples
 #For example if you want to configure the tool chain for specific target list the names to find the correct toolchain name 
- - ./ct-ng lidt-samples | grep `target_name`
+ - ./ct-ng list-samples | grep `target_name`
 ```
 ```bash
 #We will configure here the cross tool for arm cortex a9 : arm-cortexa9_neon-linux-gnueabihf
