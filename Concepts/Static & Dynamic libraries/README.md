@@ -7,7 +7,7 @@
 - A static library is a collection of object files that have been compiled
 and linked together to form a single library file that can be linked directly into a program at compile-time it.
 
-- __lib.a__ -- represents static lib
+- __lib*.a__ -- represents static lib
 
 ### 1-Create a static library 
 ----
@@ -73,7 +73,7 @@ and linked together to form a single library file that can be linked directly in
 ## #Dynamic libraries 
 - A Dynamic library is a type of library that is linked to an executable
 program at runtime, rather than being linked at compile time.
-- lib.so -- represent shared object
+- __lib*.so__ -- represents shared object
 
 ### 1-Create a Dynamic library 
 ---
