@@ -51,9 +51,9 @@
  - ./ct-ng list-samples
 #For example if you want to configure the tool chain for specific target list the names to find the correct toolchain name 
  - ./ct-ng lidt-samples | grep `target_name`
-#We will configure here the cross tool for arm cortex a9 : arm-cortexa9_neon-linux-gnueabihf
 ```
 ```bash
+#We will configure here the cross tool for arm cortex a9 : arm-cortexa9_neon-linux-gnueabihf
 #To configure the microcontroller used
  - ./ct-ng arm-cortexa5-linux-uclibcgnueabihf
 ```
@@ -73,7 +73,7 @@
 ```
 ### Check Toolchain output
 
- - **lib** `Contains the shared objects for the C library and the dynamic 	  linker/loader, ld-linux.`
+ - **lib** `Contains the shared objects for the C library and the dynamic linker/loader, ld-linux.`
  - **usr/lib** `The static library archive files for the C library, and any other libraries that may be installed subsequently.`
  - **usr/include** `Contains the headers for all the libraries`
  - **usr/bin** `Contains the utility programs that run on the target, such as the ldd command`
