@@ -12,10 +12,10 @@ and linked together to form a single library file that can be linked directly in
 
 ### 1-Create a static library 
 ----
-```{r, engine='bash', count_lines}
+```bash
 #Create static_lib directory
-	mkdir static_lib
-	cd static_lib
+	-mkdir static_lib
+	-cd static_lib
 ```
 ```bash
 #Create Include & Lib directories inside
@@ -25,8 +25,8 @@ and linked together to form a single library file that can be linked directly in
  
  ```bash
 #Create lib.h Header file in Include directory & add inside it function prototype
-		- Create `libsub.h` File 
-		- Insert 'int sub(int,int);' prototype 
+	- Create `libsub.h` File 
+	- Insert 'int sub(int,int);' prototype 
 ```
 
 ```bash
@@ -39,10 +39,10 @@ and linked together to form a single library file that can be linked directly in
 ---
 ```bash
 #Create main.c Sourcefile in static_lib directory & add inside it a main function definition
-    - Create `main.c` File
-    - Insert '#include stdio'
-    - Insert '#include libsub.h'
-    - Insert 'int main(void){int num1 = 5,num2 = 2,res = 0; res = sub(num1,num2); return 0;}'
+	- Create `main.c` File
+	- Insert '#include stdio'
+	- Insert '#include libsub.h'
+	- Insert 'int main(void){int num1 = 5,num2 = 2,res = 0; res = sub(num1,num2); return 0;}'
 ```
 ### 3-Build the application
 ---
@@ -58,15 +58,15 @@ and linked together to form a single library file that can be linked directly in
 ```
 ```bash
 #Generate the main.o including the header library in the symbol table 
-	 - gcc -c main.c -I .Include 
+	- gcc -c main.c -I .Include 
 #Generate the executable file 
-	 - gcc -o main.exe main.o Liboutput_archive.a
+	- gcc -o main.exe main.o Liboutput_archive.a
 ```
 ### 4-Run the app
 ---
 ```bash
-	 -.main.exe
-	 #Now it should run with no errors 
+	-.main.exe
+	#Now it should run with no errors 
 ```
 
 ---
@@ -92,8 +92,8 @@ program at runtime, rather than being linked at compile time.
  
  ```bash
 #Create lib.h Header file in Include directory & add inside it function prototype
-		- Create `libsub.h` File 
-		- Insert 'int sub(int,int);' prototype 
+	- Create `libsub.h` File 
+	- Insert 'int sub(int,int);' prototype 
 ```
 ```bash
 #Create lib.c Source file in Lib directory & add inside it a function definition
@@ -105,10 +105,10 @@ program at runtime, rather than being linked at compile time.
 ---
 ```bash
 #Create main.c Sourcefile in dynamic_lib directory & add inside it a main function definition
-    - Create `main.c` File
-    - Insert '#include stdio'
-    - Insert '#include libsub.h'
-    - Insert 'int main(void){int num1 = 5,num2 = 2,res = 0; res = sub(num1,num2); return 0;}'
+	- Create `main.c` File
+	- Insert '#include stdio'
+	- Insert '#include libsub.h'
+	- Insert 'int main(void){int num1 = 5,num2 = 2,res = 0; res = sub(num1,num2); return 0;}'
 ```     
 ### 3-Build the application
 ---
@@ -120,9 +120,9 @@ program at runtime, rather than being linked at compile time.
 ```
 ```bash
 #Generate the main.o including the header library in the symbol table 
-	 - gcc -c -fPIC main.c -I .Include 
+	- gcc -c -fPIC main.c -I .Include 
 #Generate the executable file 
-	 - gcc main.c -L .Lib .Liboutput.so -o main.exe -I .Include
+	- gcc main.c -L .Lib .Liboutput.so -o main.exe -I .Include
 #We need to let the system loader knows the location of the linked shared libraries to link them runtime when needed
 	#We need to set the variable with the directory path of the lib.so files
 	1- `LD_LIBRARY_PATH` 
@@ -145,6 +145,6 @@ program at runtime, rather than being linked at compile time.
 ### 4-Run the app
 ---
 ```bash
-	 -.main.exe
-	 #Now it should run with no errors 
+	-.main.exe
+	#Now it should run with no errors 
 ```
