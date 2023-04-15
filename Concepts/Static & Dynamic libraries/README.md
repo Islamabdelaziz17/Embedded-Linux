@@ -3,7 +3,7 @@
 - A library in C is a collection of objects files exposed for use and build other programs, so instead of re-write sections of code we bring back information that is already existing, this is where it comes to the concept of a library.
 - In C there exist two kinds of libraries Static and Dynamic 
   
-## #Static libraries 
+## Static libraries 
 - A static library is a collection of object files that have been compiled
 and linked together to form a single library file that can be linked directly into a program at compile-time it.
 
@@ -70,7 +70,7 @@ and linked together to form a single library file that can be linked directly in
 
 ---
 
-## #Dynamic libraries 
+## Dynamic libraries 
 - A Dynamic library is a type of library that is linked to an executable
 program at runtime, rather than being linked at compile time.
 - __lib*.so__ -- represents shared object
