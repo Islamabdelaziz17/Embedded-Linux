@@ -2,18 +2,18 @@
 # Crosstool-NG
 - Crosstool-NG is a versatile **(**cross**)** toolchain generator. It supports many architectures and components and has a simple yet powerful menuconfig-style interface.
 
-## #Toolchain
+## Toolchain
 
 - Set of software development tools used simultaneously to complete complex software development tasks or to deliver a software product.
 
-## #Native Toolchain
+## Native Toolchain
 
 - This toolchain runs on the same type of system, sometimes the same actual system, as the programs it generates. This is the usual case for desktops and servers.
 
-## #Cross Toolchain
+## Cross Toolchain
 
  - This toolchain runs on a different type of system than the target, allowing the development to be done on a fast desktop PC and then loaded onto the embedded target for testing.
-## #What's in a toolchain ?
+## What's in a toolchain ?
  - Binutils
 	 - Is a set of tools to generate and manipulate binaries for a given CPU architecture:
 		 - Assembler, that generates binary code from assembler source code.
