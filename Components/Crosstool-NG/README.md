@@ -13,7 +13,6 @@
 ## #Cross Toolchain
 
  - This toolchain runs on a different type of system than the target, allowing the development to be done on a fast desktop PC and then loaded onto the embedded target for testing.
- - 
 ## #What's in a toolchain ?
  - Binutils
 	 - Is a set of tools to generate and manipulate binaries for a given CPU architecture:
