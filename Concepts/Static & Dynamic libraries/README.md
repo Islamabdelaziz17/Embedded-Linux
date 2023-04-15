@@ -61,7 +61,7 @@ and linked together to form a single library file that can be linked directly in
 #Generate the executable file 
 - gcc -o main.exe main.o Liboutput_archive.a
 ```
-### 4-Run the app
+### 4-Run the application
 ---
 ```bash
 - ./main.exe
@@ -144,7 +144,7 @@ program at runtime, rather than being linked at compile time.
 	2- gcc -L.Lib -Wl,-rpath=.Lib -Wall -o main.exe main.c .Liblib.so -I.include
 
 ```
-### 4-Run the app
+### 4-Run the application
 ---
 ```bash
 -./main.exe
