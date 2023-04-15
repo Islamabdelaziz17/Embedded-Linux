@@ -14,8 +14,8 @@ and linked together to form a single library file that can be linked directly in
 ----
 ```bash
 #Create static_lib directory
-	- mkdir static_lib
-	- cd static_lib
+	mkdir static_lib
+	cd static_lib
 ```
 ```bash
 #Create Include & Lib directories inside
