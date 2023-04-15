@@ -31,7 +31,7 @@ and linked together to form a single library file that can be linked directly in
 ```bash
 #Create lib.c Source file in Lib directory & add inside it a function definition
 - Create `libsub.c` File
-- Insert '#include libsub.h'
+- Insert '#include "libsub.h"'
 - Insert 'int sub(int x,int y){return (x - y);}'
 ```
 ### 2-Create an application
@@ -39,15 +39,15 @@ and linked together to form a single library file that can be linked directly in
 ```bash
 #Create main.c Sourcefile in static_lib directory & add inside it a main function definition
 - Create `main.c` File
-- Insert '#include stdio'
-- Insert '#include libsub.h'
+- Insert '#include <stdio>'
+- Insert '#include "libsub.h"'
 - Insert 'int main(void){int num1 = 5,num2 = 2,res = 0; res = sub(num1,num2); return 0;}'
 ```
 ### 3-Build the application
 ---
 ```bash
 #Generate the libsub.o including the header library in the symbol table 
-- gcc -c libsub.c ..Include 
+- gcc -c libsub.c ../Include 
 #Generate the output.a Archive file in Lib directory to compress the libraries in an indexed format that will be used in the linker stage
 - ar -rcs output_archive.a libsub.o #arg3.o # arg4.o #...
 	[options]
@@ -57,9 +57,9 @@ and linked together to form a single library file that can be linked directly in
 ```
 ```bash
 #Generate the main.o including the header library in the symbol table 
-- gcc -c main.c -I .Include 
+- gcc -c main.c -I ./Include 
 #Generate the executable file 
-- gcc -o main.exe main.o Liboutput_archive.a
+- gcc -o main.exe main.o ./Lib/output_archive.a
 ```
 ### 4-Run the application
 ---
@@ -97,7 +97,7 @@ program at runtime, rather than being linked at compile time.
 ```bash
 #Create lib.c Source file in Lib directory & add inside it a function definition
 - Create `libsub.c` File
-- Insert '#include libsub.h'
+- Insert '#include "libsub.h"'
 - Insert 'int sub(int x,int y){return (x - y);}'
 ```
 ### 2-Create an application
@@ -105,24 +105,24 @@ program at runtime, rather than being linked at compile time.
 ```bash
 #Create main.c Sourcefile in dynamic_lib directory & add inside it a main function definition
 - Create `main.c` File
-- Insert '#include stdio'
-- Insert '#include libsub.h'
+- Insert '#include <stdio>'
+- Insert '#include "libsub.h"'
 - Insert 'int main(void){int num1 = 5,num2 = 2,res = 0; res = sub(num1,num2); return 0;}'
 ```     
 ### 3-Build the application
 ---
 ```bash
 #Generate the libsub.o including the header library in the symbol table 
-- gcc -c -fPIC libsub.c -I ..Include 
+- gcc -c -fPIC libsub.c -I ../Include 
 #Generate the output.so Shared file in Lib directory to compress the libraries in an indexed format that will be used in the linker stage
 - gcc -shared -o output.so libsub.o #arg3.o # arg4.o #...
 ```
 ```bash
 #Generate the main.o including the header library in the symbol table 
-- gcc -c -fPIC main.c -I .Include 
+- gcc -c -fPIC main.c -I ./Include 
 
 #Generate the executable file 
-- gcc main.c -L .Lib .Liboutput.so -o main.exe -I .Include
+- gcc main.c -L .Lib ./Lib/output.so -o main.exe -I ./Include
 
 #We need to let the system loader knows the location of the linked shared libraries to link them runtime when needed
 
@@ -132,16 +132,16 @@ program at runtime, rather than being linked at compile time.
 #The default search path
 2- `System Path` 
 	#Copy the shared location
-	1- sudo cp .Liblib.so usrlib 
+	1- sudo cp .Lib/lib.so usr/lib 
 	#Change the execution mode
-	2- sudo chmod 0755 usrliblib.so
+	2- sudo chmod 0755 usr/lib/lib*.so
 	#Flush the cache
 	3- sudo ldconfig  
 3- `rpath`
 	#Remove the LD_LIBRARY_PATH
 	1- unset LD_LIBRARY_PATH
 	#Compile with rpath option
-	2- gcc -L.Lib -Wl,-rpath=.Lib -Wall -o main.exe main.c .Liblib.so -I.include
+	2- gcc -L ./Lib -Wl -rpath=.Lib -Wall -o main.exe main.c .Lib/lib.so -I.include
 
 ```
 ### 4-Run the application
